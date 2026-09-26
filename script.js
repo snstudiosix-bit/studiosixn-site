@@ -1,5 +1,5 @@
 // Substitua pelo número real do WhatsApp da empresa (com DDD)
-const SEU_NUMERO_WHATSAPP = "5511999999999"; 
+const SEU_NUMERO_WHATSAPP = "5566999856584"; 
 
 const checkboxes = document.querySelectorAll('.calc-box input[type="checkbox"]');
 const totalDisplay = document.getElementById('totalValue');
