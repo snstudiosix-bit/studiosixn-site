@@ -1,12 +1,11 @@
 :root {
-    --bg-dark: #0a0c10;
-    --bg-card: #12161f;
-    --gold: #d4af37;
-    --gold-hover: #f3c638;
-    --cyan: #00d2ff;
-    --text-white: #ffffff;
-    --text-muted: #a0aec0;
-    --border-color: rgba(212, 175, 55, 0.2);
+    --bg-dark: #060b13;       /* Cor exata do fundo da tua logo */
+    --bg-card: #0c1424;       /* Tom de cartão dark cyan */
+    --cyan: #00a8ff;          /* Azul elétrico vibrante da logo */
+    --cyan-glow: rgba(0, 168, 255, 0.4);
+    --white: #ffffff;
+    --text-muted: #8a99ad;
+    --border-color: rgba(0, 168, 255, 0.25);
 }
 
 * {
@@ -18,9 +17,9 @@
 
 body {
     background-color: var(--bg-dark);
-    color: var(--text-white);
+    color: var(--white);
     line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem horizontal no celular */
+    overflow-x: hidden;
 }
 
 .container {
@@ -31,13 +30,13 @@ body {
 
 /* Header & Navegação */
 .header {
-    background: rgba(10, 12, 16, 0.95);
+    background: rgba(6, 11, 19, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 15px 0;
+    padding: 12px 0;
 }
 
 .nav-container {
@@ -47,16 +46,25 @@ body {
 }
 
 .logo {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.5rem;
-    color: var(--gold);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--white);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    letter-spacing: 2px;
 }
 
-.logo strong {
+.logo-img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.highlight-x {
     color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan-glow);
 }
 
 .nav-links {
@@ -66,46 +74,57 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-white);
+    color: var(--white);
     text-decoration: none;
     transition: 0.3s;
     font-size: 0.95rem;
 }
 
 .nav-links a:hover {
-    color: var(--gold);
+    color: var(--cyan);
 }
 
 /* Hero Section */
 .hero {
-    padding: 80px 0 60px;
-    background: radial-gradient(circle at center, rgba(0, 210, 255, 0.08) 0%, transparent 70%);
+    padding: 70px 0 60px;
+    background: radial-gradient(circle at center, rgba(0, 168, 255, 0.12) 0%, transparent 70%);
     text-align: center;
 }
 
+.hero-brand-icon {
+    margin-bottom: 20px;
+}
+
+.hero-logo-large {
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0 0 15px var(--cyan-glow));
+}
+
 .badge {
-    background: rgba(212, 175, 55, 0.1);
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 6px 16px;
+    background: rgba(0, 168, 255, 0.1);
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 6px 18px;
     border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     display: inline-block;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .hero h1 {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 3.2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
     margin: 20px 0;
     letter-spacing: 2px;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .highlight {
-    color: var(--gold);
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    color: var(--cyan);
+    text-shadow: 0 0 20px var(--cyan-glow);
 }
 
 .hero p {
@@ -122,10 +141,10 @@ body {
     flex-wrap: wrap;
 }
 
-.btn-gold, .btn-primary {
-    background: linear-gradient(135deg, #d4af37, #aa820a);
-    color: #000;
-    padding: 12px 24px;
+.btn-cyan, .btn-primary {
+    background: linear-gradient(135deg, #00a8ff, #0066cc);
+    color: var(--white);
+    padding: 14px 28px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 700;
@@ -136,17 +155,18 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    box-shadow: 0 0 15px var(--cyan-glow);
 }
 
-.btn-gold:hover {
+.btn-cyan:hover, .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 25px rgba(0, 168, 255, 0.7);
 }
 
 .btn-outline {
     border: 1px solid var(--cyan);
     color: var(--cyan);
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
@@ -158,19 +178,21 @@ body {
 }
 
 .btn-outline:hover {
-    background: rgba(0, 210, 255, 0.1);
+    background: rgba(0, 168, 255, 0.15);
+    box-shadow: 0 0 15px var(--cyan-glow);
 }
 
-/* Cards de Serviços (Grid Flexível) */
+/* Cards de Serviços */
 .services {
     padding: 60px 0;
 }
 
 .section-title {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 2.2rem;
     text-align: center;
-    color: var(--text-white);
+    color: var(--white);
+    letter-spacing: 1px;
 }
 
 .section-subtitle {
@@ -189,7 +211,7 @@ body {
 .service-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 25px;
+    padding: 28px 22px;
     border-radius: 12px;
     transition: 0.3s;
     display: flex;
@@ -200,18 +222,19 @@ body {
 .service-card:hover {
     transform: translateY(-5px);
     border-color: var(--cyan);
-    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.1);
+    box-shadow: 0 10px 25px var(--cyan-glow);
 }
 
 .service-card .icon {
-    font-size: 2rem;
-    color: var(--gold);
+    font-size: 2.2rem;
+    color: var(--cyan);
     margin-bottom: 15px;
 }
 
 .service-card h3 {
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .service-card p {
@@ -221,7 +244,7 @@ body {
 }
 
 .price-tag {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 15px;
 }
 
@@ -232,14 +255,14 @@ body {
 }
 
 .price-tag strong {
-    font-size: 1.5rem;
-    color: var(--gold);
-    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6rem;
+    color: var(--cyan);
+    font-family: 'Orbitron', sans-serif;
 }
 
 /* Calculadora */
 .calculator-section {
-    background: #0d1017;
+    background: #04070d;
     padding: 60px 0;
 }
 
@@ -275,13 +298,14 @@ body {
     left: 0;
     height: 22px;
     width: 22px;
-    background-color: #1a202c;
+    background-color: #060b13;
     border: 1px solid var(--border-color);
     border-radius: 4px;
 }
 
 .checkbox-container input:checked ~ .checkmark {
-    background-color: var(--gold);
+    background-color: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan-glow);
 }
 
 .calc-result {
@@ -289,7 +313,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 168, 255, 0.15);
     border-radius: 8px;
     padding: 25px;
 }
@@ -298,8 +323,9 @@ body {
     font-size: 2.8rem;
     font-weight: 700;
     color: var(--cyan);
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     margin: 10px 0 20px;
+    text-shadow: 0 0 15px var(--cyan-glow);
 }
 
 .btn-whatsapp {
@@ -321,6 +347,7 @@ body {
 
 .btn-whatsapp:hover {
     background: #1ebc57;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
 }
 
 /* Footer */
@@ -332,11 +359,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ===================================================
-   📱 REGRAS DE RESPONSIVIDADE (CELULARES E TABLETS)
-   =================================================== */
-
-/* Dispositivos Móveis e Tablets (Até 768px) */
+/* Responsividade Celular/Tablet */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -350,19 +373,15 @@ footer {
     }
 
     .nav-links .btn-primary {
-        display: none; /* Esconde o botão do menu no celular para economizar espaço */
+        display: none;
     }
 
     .hero {
-        padding: 50px 0 40px;
+        padding: 40px 0 30px;
     }
 
     .hero h1 {
-        font-size: 2.3rem; /* Reduz título no celular */
-    }
-
-    .hero p {
-        font-size: 0.95rem;
+        font-size: 2.1rem;
     }
 
     .hero-buttons {
@@ -370,12 +389,12 @@ footer {
         width: 100%;
     }
 
-    .btn-gold, .btn-outline {
-        width: 100%; /* Botões ocupam toda a largura da tela */
+    .btn-cyan, .btn-outline {
+        width: 100%;
     }
 
     .calc-box {
-        grid-template-columns: 1fr; /* Calculadora passa a ter 1 única coluna no celular */
+        grid-template-columns: 1fr;
         padding: 20px;
     }
 

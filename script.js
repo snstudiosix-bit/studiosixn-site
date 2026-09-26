@@ -1,10 +1,8 @@
-// Substitua pelo número real do WhatsApp da empresa (com DDD)
 const SEU_NUMERO_WHATSAPP = "5566999856584"; 
 
 const checkboxes = document.querySelectorAll('.calc-box input[type="checkbox"]');
 const totalDisplay = document.getElementById('totalValue');
 
-// Atualiza o valor total em tempo real
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', () => {
         let total = 0;
@@ -18,7 +16,6 @@ checkboxes.forEach(checkbox => {
     });
 });
 
-// Envia a mensagem com os itens selecionados via WhatsApp
 function enviarWhatsApp() {
     let servicosSelecionados = [];
     let total = 0;
@@ -35,7 +32,7 @@ function enviarWhatsApp() {
         return;
     }
 
-    let mensagem = `Olá! Gostaria de um orçamento na *STUDIO SIXN*:\n\n`;
+    let mensagem = `Olá! Gostaria de um orçamento na *Studio SIXN*:\n\n`;
     mensagem += `*Serviços Selecionados:*\n`;
     
     servicosSelecionados.forEach(item => {
@@ -44,6 +41,6 @@ function enviarWhatsApp() {
 
     mensagem += `\n*Valor Estimado:* R$ ${total.toFixed(2).replace('.', ',')}`;
     
-    const url = `https://wa.me/${66999856584}?text=${encodeURIComponent(mensagem)}`;
+    const url = `https://wa.me/${5566999856584}?text=${encodeURIComponent(mensagem)}`;
     window.open(url, '_blank');
 }
